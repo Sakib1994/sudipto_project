@@ -1,6 +1,6 @@
 <template>
   <v-form >
-      <v-row id="main-container" style="height: 86vh;" justify="center" align="center">
+      <v-row id="main-container" justify="center" align="center">
         <v-col cols="12" sm="6">
           <v-card>
             <v-row justify="center" align="center">
@@ -14,6 +14,7 @@
                       <v-text-field
                         v-model.trim="username"
                         label="Username"
+                        :append-icon="'mdi-account-plus'"
                         :rules="[rules.required]"
                         outlined
                         dense
@@ -38,7 +39,7 @@
                         class="ma-2"
                         color="success"
                       >
-                        Submit
+                        Login <v-icon>mdi-login-variant</v-icon>
                       </v-btn>
                     </v-col>
                   </v-row>
@@ -83,7 +84,7 @@ export default {
 
 <style>
   #main-container{
-    height: 80vh;
+    height: 85vh;
     background-image: linear-gradient(to right top, #4545f5 30%, violet);
   }
 </style>
