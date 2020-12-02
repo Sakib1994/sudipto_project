@@ -3,8 +3,9 @@
         <v-form v-model="valid">
             <v-container>
                 <v-row justify="center">
-                    <v-col cols="10" sm="7" md="8">
-                        <v-card class="pa-4 ma-8">
+                    <v-col cols="10" sm="6" md="8">
+                        <v-card class="pa-4 ma-8" color="grey lighten-5">
+                            <v-card-title>CUSTOMER PROFILE</v-card-title>
                             <v-row justify="center">
                                 <v-col cols="12" md="6">
                                     <v-tooltip top>

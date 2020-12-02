@@ -1,5 +1,5 @@
 <template>
-    <v-form>
+    <v-container fill-height fluid>
         <v-row justify="center" align="center">
             <v-col cols="12" sm="6">
                 <v-card color="deep-purple lighten-5">
@@ -12,7 +12,7 @@
                             />
                         </v-col>
                         <v-col cols="12" sm="7">
-                            <v-card class="ma-2 pa-2">
+                            <v-card class="ma-2 pa-2" color="grey lighten-5">
                                 <v-row justify="center">
                                     <v-col cols="12">
                                         <v-text-field
@@ -64,7 +64,7 @@
                 </v-card>
             </v-col>
         </v-row>
-    </v-form>
+    </v-container>
 </template>
 
 <script>

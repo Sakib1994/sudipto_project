@@ -25,7 +25,7 @@
             <v-menu top :close-on-content-click="closeOnContentClick">
                 <template v-slot:activator="{ on, attrs }">
                     <v-col cols="12" sm="1">
-                        <v-btn icon dark v-bind="attrs" v-on="on">
+                        <v-btn right icon dark v-bind="attrs" v-on="on">
                             <v-icon>mdi-arrow-down-drop-circle-outline</v-icon>
                         </v-btn>
                     </v-col>
