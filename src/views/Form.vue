@@ -6,7 +6,7 @@
                     <v-col cols="10" sm="7" md="7">
                         <v-card class="pa-2 ma-2">
                             <v-row justify="center">
-                                <v-col cols="12" class="my-0">
+                                <v-col cols="12" md="6">
                                     <v-tooltip top>
                                         <template
                                             v-slot:activator="{ on, attrs }"
@@ -274,7 +274,7 @@
                                         >
                                     </v-tooltip>
                                 </v-col>
-                                <v-col cols="12" md="6">
+                                <v-col cols="12">
                                     <v-tooltip top>
                                         <template
                                             v-slot:activator="{ on, attrs }"
@@ -468,7 +468,7 @@
                                             >
                                         </v-tooltip>
                                     </v-col>
-                                    <v-col cols="12" md="6">
+                                    <v-col cols="12">
                                         <v-tooltip top>
                                             <template
                                                 v-slot:activator="{ on, attrs }"
