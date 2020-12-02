@@ -4,7 +4,7 @@
             <v-container>
                 <v-row justify="center">
                     <v-col cols="10" sm="7" md="7">
-                        <v-card class="pa-2 ma-2">
+                        <v-card class="pa-4 ma-8">
                             <v-row justify="center">
                                 <v-col cols="12" md="6">
                                     <v-tooltip top>

@@ -1,23 +1,21 @@
 <template>
     <v-app>
-        <v-app-bar app color="primary" dark>
+        <v-app-bar app color="grey darken-4" dark dense>
             <div class="d-flex align-center">
                 <v-img
-                    alt="Vuetify Logo"
-                    class="shrink mr-2"
+                    alt="logo"
                     contain
-                    src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
+                    :src="require('./assets/logo.png')"
                     transition="scale-transition"
-                    width="40"
+                    width="70"
                 />
                 <router-link to="/">
                     <v-img
-                        alt="Vuetify Name"
-                        class="shrink mt-1 hidden-sm-and-down"
+                        alt="logo"
                         contain
-                        min-width="100"
-                        src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-                        width="100"
+                        :src="require('./assets/rgadstext.png')"
+                        transition="scale-transition"
+                        width="90"
                     />
                 </router-link>
             </div>
@@ -52,8 +50,8 @@
                         style="color: #032a7f; font-size: 10px; "
                     >
                         Copyright
-                        {{ new Date().getFullYear() }} — CreditGarden Ltd. | All
-                        rights reserved.
+                        {{ new Date().getFullYear() }} — Rgads. | All rights
+                        reserved.
                     </div>
                 </v-col>
 
@@ -66,14 +64,14 @@
                     <div class="mr-1">
                         <router-link
                             style="textDecoration: none; color: #032a7f;font-size: 11px; font-weight: bold"
-                            to="/privacy"
+                            to="/"
                             @click.stop
                             >Privacy Agreement</router-link
                         >
                         {{ " | " }}
                         <router-link
                             style="textDecoration: none; color: #032a7f;font-size: 11px; font-weight: bold"
-                            to="/howitworks"
+                            to="/"
                             @click.stop
                             >How it works</router-link
                         >
