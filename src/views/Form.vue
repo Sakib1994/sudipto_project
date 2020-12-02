@@ -36,7 +36,7 @@
                                         <span>enter your full name</span>
                                     </v-tooltip>
                                 </v-col>
-                                <v-col cols="12">
+                                <v-col cols="12" md="6">
                                     <v-tooltip top>
                                         <template
                                             v-slot:activator="{ on, attrs }"
@@ -68,7 +68,7 @@
                                         <span>Choose the industry</span>
                                     </v-tooltip>
                                 </v-col>
-                                <v-col cols="12">
+                                <v-col cols="12" md="6">
                                     <v-tooltip top>
                                         <template
                                             v-slot:activator="{ on, attrs }"
@@ -103,7 +103,7 @@
                                         >
                                     </v-tooltip>
                                 </v-col>
-                                <v-col cols="12">
+                                <v-col cols="12" md="6">
                                     <v-tooltip top>
                                         <template
                                             v-slot:activator="{ on, attrs }"
@@ -136,7 +136,7 @@
                                         <span>enter the annual revenue</span>
                                     </v-tooltip>
                                 </v-col>
-                                <v-col cols="12">
+                                <v-col cols="12" md="6">
                                     <v-tooltip top>
                                         <template
                                             v-slot:activator="{ on, attrs }"
@@ -169,7 +169,7 @@
                                         <span>how many years in operation</span>
                                     </v-tooltip>
                                 </v-col>
-                                <v-col cols="12">
+                                <v-col cols="12" md="6">
                                     <v-tooltip top>
                                         <template
                                             v-slot:activator="{ on, attrs }"
@@ -208,7 +208,7 @@
                                         >
                                     </v-tooltip>
                                 </v-col>
-                                <v-col cols="12">
+                                <v-col cols="12" md="6">
                                     <v-tooltip top>
                                         <template
                                             v-slot:activator="{ on, attrs }"
@@ -237,7 +237,7 @@
                                         <span>enter your budget</span>
                                     </v-tooltip>
                                 </v-col>
-                                <v-col cols="12">
+                                <v-col cols="12" md="6">
                                     <v-tooltip top>
                                         <template
                                             v-slot:activator="{ on, attrs }"
@@ -274,7 +274,7 @@
                                         >
                                     </v-tooltip>
                                 </v-col>
-                                <v-col cols="12">
+                                <v-col cols="12" md="6">
                                     <v-tooltip top>
                                         <template
                                             v-slot:activator="{ on, attrs }"
@@ -311,7 +311,7 @@
                                 <template
                                     v-if="answers.consumer_type === 'Business'"
                                 >
-                                    <v-col cols="12">
+                                    <v-col cols="12" md="6">
                                         <v-tooltip top>
                                             <template
                                                 v-slot:activator="{ on, attrs }"
@@ -349,7 +349,7 @@
                                             >
                                         </v-tooltip>
                                     </v-col>
-                                    <v-col cols="12">
+                                    <v-col cols="12" md="6">
                                         <v-tooltip top>
                                             <template
                                                 v-slot:activator="{ on, attrs }"
@@ -392,7 +392,7 @@
                                         answers.consumer_type === 'Personal'
                                     "
                                 >
-                                    <v-col cols="12">
+                                    <v-col cols="12" md="6">
                                         <v-tooltip top>
                                             <template
                                                 v-slot:activator="{ on, attrs }"
@@ -430,7 +430,7 @@
                                             >
                                         </v-tooltip>
                                     </v-col>
-                                    <v-col cols="12">
+                                    <v-col cols="12" md="6">
                                         <v-tooltip top>
                                             <template
                                                 v-slot:activator="{ on, attrs }"
@@ -468,7 +468,7 @@
                                             >
                                         </v-tooltip>
                                     </v-col>
-                                    <v-col cols="12">
+                                    <v-col cols="12" md="6">
                                         <v-tooltip top>
                                             <template
                                                 v-slot:activator="{ on, attrs }"
