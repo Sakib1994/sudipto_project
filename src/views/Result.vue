@@ -3,6 +3,7 @@
     <h1>Result</h1>
     <v-container>
       <v-row justify="space-around">
+        
         <v-col cols="12" sm="6" md="4">
           <v-card>
             <h3>Cash Distribution</h3>

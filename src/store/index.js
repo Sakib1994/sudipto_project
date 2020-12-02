@@ -49,8 +49,7 @@ export default new Vuex.Store({
   actions: {
     setAnswers: ({ commit }, payload) => {
       commit("setLoadingToogle", true);
-
-      const payloadJson = {
+      let payloadJson = {
         client_name: payload.client_name,
         industry: payload.industry,
         client_size: payload.client_size,
@@ -66,14 +65,23 @@ export default new Vuex.Store({
         geographic_preferecne: payload.geographic_preferecne,
         life_stage_preference: payload.life_stage_preference,
       };
-      // console.log(payloadJson);
-      axios.post("submit", payloadJson, 
-      {
-        headers: {
-          'x-access-token': localStorage.getItem('token'),
-          'Content-Type': 'application/json'
-        }
+      if (payload.consumer_type === 'Business') {
+        payloadJson.gender_preference = ""
+        payloadJson.geographic_preferecne = ""
+        payloadJson.life_stage_preference = ""
+      } else {
+        payloadJson.target_industry = ""
+        payloadJson.business_size = ""
       }
+
+      console.log(payloadJson);
+      axios.post("submit", payloadJson,
+        {
+          headers: {
+            'x-access-token': localStorage.getItem('token'),
+            'Content-Type': 'application/json'
+          }
+        }
       ).then(response => {
         console.log(response);
         const { response_id, username, cash_distribution,

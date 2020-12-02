@@ -13,7 +13,8 @@
                     :rules="[requiredRules('Client Name')]"
                     outlined
                     dense
-                  ></v-text-field>
+                  >
+                  </v-text-field>
                 </v-col>
                 <v-col cols="12">
                   <v-select
