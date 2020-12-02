@@ -65,7 +65,6 @@ export default new Vuex.Store({
         geographic_preferecne: payload.geographic_preferecne,
         life_stage_preference: payload.life_stage_preference,
       };
-<<<<<<< HEAD
       if (payload.consumer_type === 'Business') {
         payloadJson.gender_preference = ""
         payloadJson.geographic_preferecne = ""
@@ -73,19 +72,8 @@ export default new Vuex.Store({
       } else {
         payloadJson.target_industry = ""
         payloadJson.business_size = ""
-=======
-      console.log(payloadJson, localStorage.getItem('token'));
-      axios.post("submit", payloadJson, 
-      {
-        
-        headers: {
-          'x-access-token': localStorage.getItem('token'),
-          'Content-Type': 'application/json'
-        }
->>>>>>> 2ba738ba24d1499e6af3fb07b04f309098d68cb0
       }
-
-      console.log(payloadJson);
+      // console.log(payloadJson);
       axios.post("submit", payloadJson,
         {
           headers: {
@@ -131,10 +119,7 @@ export default new Vuex.Store({
             token = response.data.token;
             localStorage.setItem("token", token);
             commit("setAccessToken", token);
-            // Remove the setTimeOut and Check
-            // setTimeout(() => {
             commit("setLoadingToogle", false);
-            // }, 1000);
             router.push({ name: 'Form' });
           }
         })
