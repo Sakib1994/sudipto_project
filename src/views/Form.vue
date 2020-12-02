@@ -329,6 +329,11 @@
                                                     :label="
                                                         questionsState[9].qName
                                                     "
+                                                    :rules="[
+                                                        businessRules(
+                                                            'Consumer Type'
+                                                        ),
+                                                    ]"
                                                     dense
                                                     outlined
                                                 >
@@ -367,6 +372,11 @@
                                                     :label="
                                                         questionsState[10].qName
                                                     "
+                                                    :rules="[
+                                                        businessRules(
+                                                            'Consumer Type'
+                                                        ),
+                                                    ]"
                                                     dense
                                                     outlined
                                                 >
@@ -410,6 +420,11 @@
                                                     :label="
                                                         questionsState[11].qName
                                                     "
+                                                    :rules="[
+                                                        personalRules(
+                                                            'Consumer Type'
+                                                        ),
+                                                    ]"
                                                     dense
                                                     outlined
                                                 >
@@ -448,6 +463,11 @@
                                                     :label="
                                                         questionsState[12].qName
                                                     "
+                                                    :rules="[
+                                                        personalRules(
+                                                            'Consumer Type'
+                                                        ),
+                                                    ]"
                                                     dense
                                                     outlined
                                                 >
@@ -486,6 +506,11 @@
                                                     :label="
                                                         questionsState[13].qName
                                                     "
+                                                    :rules="[
+                                                        personalRules(
+                                                            'Consumer Type'
+                                                        ),
+                                                    ]"
                                                     dense
                                                     outlined
                                                 >
@@ -513,7 +538,6 @@
                                         @click="submitData"
                                         :disabled="!valid"
                                         :loading="loading"
-                                       
                                         color="success"
                                     >
                                         Submit
@@ -540,6 +564,18 @@ export default {
             valid: true,
             requiredRules(field) {
                 return (v) => !!v || v === 0 || `${field} is required`;
+            },
+            businessRules(field) {
+                return (v) =>
+                    (this.answers.consumer_type == "Business" && !!v) ||
+                    v === 0 ||
+                    `${field} is required`;
+            },
+            personalRules(field) {
+                return (v) =>
+                    (this.answers.consumer_type == "Personal" && !!v) ||
+                    v === 0 ||
+                    `${field} is required`;
             },
         };
     },
