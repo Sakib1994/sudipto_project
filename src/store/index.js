@@ -1,8 +1,8 @@
+import router from '@/router'
+import axios from 'axios'
 import Vue from 'vue'
 import Vuex from 'vuex'
-import axios from 'axios'
 
-import router from '@/router'
 
 Vue.use(Vuex)
 
@@ -66,14 +66,15 @@ export default new Vuex.Store({
         geographic_preferecne: payload.geographic_preferecne,
         life_stage_preference: payload.life_stage_preference,
       };
-      // console.log(payloadJson);
+      console.log(payloadJson, localStorage.getItem('token'));
       axios.post("submit", payloadJson, 
-      // {
-      //   headers: {
-      //     'x-access-token': localStorage.getItem('token'),
-      //     'Content-Type': 'text/json'
-      //   }
-      // }
+      {
+        
+        headers: {
+          'x-access-token': localStorage.getItem('token'),
+          'Content-Type': 'application/json'
+        }
+      }
       ).then(response => {
         console.log(response);
         const { response_id, username, cash_distribution,
@@ -92,7 +93,7 @@ export default new Vuex.Store({
         router.push({ name: 'Result' });
       })
         .catch(error => {
-          console.log(error);
+          console.log("Errod sb ",error);
           commit("setLoadingToogle", false);
         });
       commit("setAnswers", payload);
