@@ -3,7 +3,7 @@
         <v-form v-model="valid">
             <v-container>
                 <v-row justify="center">
-                    <v-col cols="10" sm="7" md="7">
+                    <v-col cols="10" sm="7" md="8">
                         <v-card class="pa-4 ma-8">
                             <v-row justify="center">
                                 <v-col cols="12" md="6">
@@ -507,16 +507,18 @@
                                         </v-tooltip>
                                     </v-col>
                                 </template>
-                                <v-btn
-                                    @click="submitData"
-                                    :disabled="!valid"
-                                    :loading="loading"
-                                    class="ma-2"
-                                    outlined
-                                    color="success"
-                                >
-                                    Submit
-                                </v-btn>
+                                <v-col cols="12">
+                                    <v-btn
+                                        block
+                                        @click="submitData"
+                                        :disabled="!valid"
+                                        :loading="loading"
+                                       
+                                        color="success"
+                                    >
+                                        Submit
+                                    </v-btn>
+                                </v-col>
                             </v-row>
                         </v-card>
                     </v-col>
