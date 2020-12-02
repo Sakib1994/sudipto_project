@@ -68,12 +68,12 @@ export default new Vuex.Store({
       };
       // console.log(payloadJson);
       axios.post("submit", payloadJson, 
-      // {
-      //   headers: {
-      //     'x-access-token': localStorage.getItem('token'),
-      //     'Content-Type': 'text/json'
-      //   }
-      // }
+      {
+        headers: {
+          'x-access-token': localStorage.getItem('token'),
+          'Content-Type': 'application/json'
+        }
+      }
       ).then(response => {
         console.log(response);
         const { response_id, username, cash_distribution,
