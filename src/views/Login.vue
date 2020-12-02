@@ -1,43 +1,53 @@
 <template>
-  <v-form>
-    <v-container>
-      <v-row justify="center">
-        <v-col cols="12" sm="6" md="4">
-          <v-text-field
-            v-model.trim="username"
-            label="Username"
-            :rules="[rules.required]"
-            outlined
-            dense
-          ></v-text-field>
+  <v-form >
+      <v-row id="main-container" style="height: 86vh;" justify="center" align="center">
+        <v-col cols="12" sm="6">
+          <v-card>
+            <v-row justify="center" align="center">
+              <v-col cols="9" sm="5">
+                <img src="@/assets/CompanyLogo.png" width="100%" alt="Company Logo" />
+              </v-col>
+              <v-col cols="12" sm="7">
+                <v-card class="pa-3">
+                  <v-row justify="center">
+                    <v-col cols="12">
+                      <v-text-field
+                        v-model.trim="username"
+                        label="Username"
+                        :rules="[rules.required]"
+                        outlined
+                        dense
+                      ></v-text-field>
+                    </v-col>
+                    <v-col cols="12">
+                      <v-text-field
+                        v-model.trim="password"
+                        :type="showPassword ? 'text' : 'password'"
+                        :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
+                        @click:append="showPassword = !showPassword"
+                        label="Password"
+                        :rules="[rules.required, rules.min]"
+                        outlined
+                        dense
+                      ></v-text-field>
+                    </v-col>
+                    <v-col cols="12">
+                      <v-btn
+                        @click="login"
+                        :loading="loading"
+                        class="ma-2"
+                        color="success"
+                      >
+                        Submit
+                      </v-btn>
+                    </v-col>
+                  </v-row>
+                </v-card>
+              </v-col>
+            </v-row>
+          </v-card>
         </v-col>
       </v-row>
-      <v-row justify="center">
-        <v-col cols="12" sm="6" md="4">
-          <v-text-field
-            v-model.trim="password"
-            :type="showPassword ? 'text' : 'password'"
-            :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
-            @click:append="showPassword = !showPassword"
-            label="Password"
-            :rules="[rules.required, rules.min]"
-            outlined
-            dense
-          ></v-text-field>
-        </v-col>
-      </v-row>
-      <v-row justify="center">
-        <v-btn
-          @click="login"
-          :loading="loading"
-          class="ma-2"
-          outlined
-          color="success"
-        >
-          Submit
-        </v-btn>
-      </v-row>
-    </v-container>
   </v-form>
 </template>
 
@@ -62,31 +72,18 @@ export default {
   },
   methods: {
     async login() {
-       await this.$store
-        .dispatch("setAccessToken", {
-          username: this.username,
-          password: this.password,
-        });
-
-      // this.$router.push({ name: 'Form' });
-      // axios
-      // .get("login", {
-      //   auth: {
-      //     username: this.username,
-      //     password: this.password,
-      //   },
-      // })
-      // .then((response) => {
-      //   if (response.status === 200) {
-      //     localStorage.setItem("token", response.data.token);
-      //     console.log(response.data.token);
-      //     this.$router.push({ path: 'Form' })
-      //   }
-      //   console.log(response);
-      // });
+      await this.$store.dispatch("setAccessToken", {
+        username: this.username,
+        password: this.password,
+      });
     },
   },
 };
 </script>
 
-<style></style>
+<style>
+  #main-container{
+    height: 80vh;
+    background-image: linear-gradient(to right top, #4545f5 30%, violet);
+  }
+</style>
