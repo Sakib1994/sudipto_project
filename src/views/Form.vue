@@ -3,7 +3,7 @@
         <v-form v-model="valid">
             <v-container>
                 <v-row justify="center">
-                    <v-col cols="9" sm="7" md="7">
+                    <v-col cols="10" sm="7" md="7">
                         <v-card class="pa-2 ma-2">
                             <v-row justify="center">
                                 <v-col cols="12" class="my-0">
