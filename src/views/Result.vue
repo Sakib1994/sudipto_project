@@ -1,50 +1,65 @@
 <template>
-    <div class="result">
-        <h1>Result</h1>
-        <v-container>
+  <div class="result">
+    <h1>Result</h1>
+    <v-container>
+      <v-card class="mb-6">
+        <v-row justify="space-around">
+          <v-card-title>Pie Charts</v-card-title>
+          <v-card-text>
             <v-row justify="space-around">
-                <v-col cols="12" sm="6" md="4">
-                    <v-card>
-                        <h3>Cash Distribution</h3>
-                        <PieChart :chartdata="chartdata1" :options="options" />
-                    </v-card>
-                </v-col>
-
-                <v-col cols="12" sm="6" md="4">
-                    <v-card>
-                        <h3>Spend distribution</h3>
-                        <PieChart :chartdata="chartdata2" :options="options" />
-                    </v-card>
-                </v-col>
+              <v-col cols="12" sm="6" md="4">
+                <v-card>
+                  <h3>Cash Distribution</h3>
+                  <PieChart :chartdata="chartdata1" :options="options" />
+                </v-card>
+              </v-col>
+              <v-col cols="12" sm="6" md="4">
+                <v-card>
+                  <h3>Spend distribution</h3>
+                  <PieChart :chartdata="chartdata2" :options="options" />
+                </v-card>
+              </v-col>
             </v-row>
-            <v-row justify="space-around">
-                <v-col cols="12" sm="6">
-                    <v-card>
-                        <h3>Spend Distribution Table</h3>
-                        <Table :data="spendTableData" />
-                    </v-card>
-                </v-col>
-                <v-col cols="12" sm="6">
-                    <v-card>
-                        <h3>Print Spend Distribution Table</h3>
-                        <Table :data="printSpendTableData" />
-                    </v-card>
-                </v-col>
-                <v-col cols="12" sm="6">
-                    <v-card>
-                        <h3>Radio Spend Distribution Table</h3>
-                        <Table :data="radioSpendTableData" />
-                    </v-card>
-                </v-col>
-                <v-col cols="12" sm="6">
-                    <v-card>
-                        <h3>TV Spend Distribution Table</h3>
-                        <Table :data="tvSpendTableData" />
-                    </v-card>
-                </v-col>
-            </v-row>
-        </v-container>
-    </div>
+          </v-card-text>
+        </v-row>
+      </v-card>
+      <v-card>
+        <v-row justify="space-around">
+          <v-card-title>
+            Tables
+          </v-card-title>
+        </v-row>
+        <v-card-text>
+          <v-row justify="space-around">
+            <v-col cols="12" sm="6">
+              <v-card>
+                <h3>Spend Distribution Table</h3>
+                <Table :data="spendTableData" />
+              </v-card>
+            </v-col>
+            <v-col cols="12" sm="6">
+              <v-card>
+                <h3>Print Spend Distribution Table</h3>
+                <Table :data="printSpendTableData" />
+              </v-card>
+            </v-col>
+            <v-col cols="12" sm="6">
+              <v-card>
+                <h3>Radio Spend Distribution Table</h3>
+                <Table :data="radioSpendTableData" />
+              </v-card>
+            </v-col>
+            <v-col cols="12" sm="6">
+              <v-card>
+                <h3>TV Spend Distribution Table</h3>
+                <Table :data="tvSpendTableData" />
+              </v-card>
+            </v-col>
+          </v-row>
+        </v-card-text>
+      </v-card>
+    </v-container>
+  </div>
 </template>
 
 <script>
@@ -137,6 +152,6 @@ export default {
 <style>
 h3,
 h1 {
-    text-align: center;
+  text-align: center;
 }
 </style>
