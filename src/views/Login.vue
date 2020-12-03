@@ -13,6 +13,7 @@
                         </v-col>
                         <v-col cols="12" sm="7">
                             <v-card class="ma-2 pa-2" color="grey lighten-5">
+                                <v-card-subtitle>Member Login</v-card-subtitle>
                                 <v-row justify="center">
                                     <v-col cols="12">
                                         <v-text-field
