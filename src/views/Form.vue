@@ -3,8 +3,9 @@
         <v-form v-model="valid">
             <v-container>
                 <v-row justify="center">
-                    <v-col cols="10" sm="7" md="7">
-                        <v-card class="pa-4 ma-8">
+                    <v-col cols="10" sm="6" md="8">
+                        <v-card class="pa-4 ma-8" color="grey lighten-5">
+                            <v-card-title>CUSTOMER PROFILE</v-card-title>
                             <v-row justify="center">
                                 <v-col cols="12" md="6">
                                     <v-tooltip top>
@@ -329,6 +330,11 @@
                                                     :label="
                                                         questionsState[9].qName
                                                     "
+                                                    :rules="[
+                                                        businessRules(
+                                                            'Consumer Type'
+                                                        ),
+                                                    ]"
                                                     dense
                                                     outlined
                                                 >
@@ -367,6 +373,11 @@
                                                     :label="
                                                         questionsState[10].qName
                                                     "
+                                                    :rules="[
+                                                        businessRules(
+                                                            'Consumer Type'
+                                                        ),
+                                                    ]"
                                                     dense
                                                     outlined
                                                 >
@@ -410,6 +421,11 @@
                                                     :label="
                                                         questionsState[11].qName
                                                     "
+                                                    :rules="[
+                                                        personalRules(
+                                                            'Consumer Type'
+                                                        ),
+                                                    ]"
                                                     dense
                                                     outlined
                                                 >
@@ -448,6 +464,11 @@
                                                     :label="
                                                         questionsState[12].qName
                                                     "
+                                                    :rules="[
+                                                        personalRules(
+                                                            'Consumer Type'
+                                                        ),
+                                                    ]"
                                                     dense
                                                     outlined
                                                 >
@@ -486,6 +507,11 @@
                                                     :label="
                                                         questionsState[13].qName
                                                     "
+                                                    :rules="[
+                                                        personalRules(
+                                                            'Consumer Type'
+                                                        ),
+                                                    ]"
                                                     dense
                                                     outlined
                                                 >
@@ -507,16 +533,17 @@
                                         </v-tooltip>
                                     </v-col>
                                 </template>
-                                <v-btn
-                                    @click="submitData"
-                                    :disabled="!valid"
-                                    :loading="loading"
-                                    class="ma-2"
-                                    outlined
-                                    color="success"
-                                >
-                                    Submit
-                                </v-btn>
+                                <v-col cols="12">
+                                    <v-btn
+                                        block
+                                        @click="submitData"
+                                        :disabled="!valid"
+                                        :loading="loading"
+                                        color="success"
+                                    >
+                                        Submit
+                                    </v-btn>
+                                </v-col>
                             </v-row>
                         </v-card>
                     </v-col>
@@ -538,6 +565,18 @@ export default {
             valid: true,
             requiredRules(field) {
                 return (v) => !!v || v === 0 || `${field} is required`;
+            },
+            businessRules(field) {
+                return (v) =>
+                    (this.answers.consumer_type == "Business" && !!v) ||
+                    v === 0 ||
+                    `${field} is required`;
+            },
+            personalRules(field) {
+                return (v) =>
+                    (this.answers.consumer_type == "Personal" && !!v) ||
+                    v === 0 ||
+                    `${field} is required`;
             },
         };
     },
