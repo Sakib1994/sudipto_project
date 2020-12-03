@@ -21,7 +21,9 @@
             </div>
 
             <v-spacer></v-spacer>
-
+            <v-btn to="/" text v-if="this.$router.currentRoute.path ==='/result'">
+                submit again
+            </v-btn>
             <v-menu top :close-on-content-click="closeOnContentClick">
                 <template v-slot:activator="{ on, attrs }">
                     <v-col cols="1" sm="1">
@@ -116,24 +118,26 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+// import { mapState } from "vuex";
 export default {
     name: "App",
     data: () => ({
         token: "",
         closeOnContentClick: true,
+        username: ""
     }),
-    computed: {
-        ...mapState(["username"]),
-    },
     created() {
         this.token = localStorage.getItem("token");
+        this.username = localStorage.getItem("username");
     },
     beforeUpdate() {
         if (!localStorage.getItem("token")) {
             this.token = "";
         } else if (localStorage.getItem("token")) {
             this.token = localStorage.getItem("token");
+        }
+        if (localStorage.getItem("username")) {
+            this.username = localStorage.getItem("username");
         }
     },
     methods: {

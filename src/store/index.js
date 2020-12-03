@@ -120,15 +120,11 @@ export default new Vuex.Store({
           if (response.status === 200) {
             const {token, username}  = response.data;
             localStorage.setItem("token", token);
+            localStorage.setItem("username", username);
             commit("setAccessToken", token);
             commit("setUsername", username);
             commit("setLoadingToogle", false);
             router.push({ name: 'Form' });
-          }
-          else if (response.status === 401) {
-            console.log("error");
-            commit("setError", "please try with diffent Username password combination");
-            commit("setLoadingToogle", false);
           }
         })
         .catch(error => {
