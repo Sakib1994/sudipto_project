@@ -5,8 +5,8 @@
                 <v-row justify="space-around">
                     <v-card-title>Media Recommendations</v-card-title>
                     <v-card-text>
-                        <v-row justify="space-around">
-                            <v-col cols="12" sm="6" md="4">
+                        <v-row justify="center">
+                            <v-col cols="10" sm="6" md="4">
                                 <v-card>
                                     <h3>Cash Distribution</h3>
                                     <PieChart
@@ -15,7 +15,7 @@
                                     />
                                 </v-card>
                             </v-col>
-                            <v-col cols="12" sm="6" md="4">
+                            <v-col cols="10" sm="6" md="4">
                                 <v-card>
                                     <h3>Spend distribution</h3>
                                     <PieChart
@@ -35,29 +35,31 @@
                     </v-card-title>
                 </v-row>
                 <v-card-text>
-                    <v-row justify="space-around">
-                        <v-col cols="12" sm="6">
+                    <v-row justify="center">
+                        <v-col cols="10" sm="6" md="4">
                             <v-card>
                                 <h3>Spend Distribution Table</h3>
                                 <Table :data="spendTableData" />
                             </v-card>
                         </v-col>
-                        <v-col cols="12" sm="6">
+                        <v-col cols="10" sm="6" md="4">
+                            <v-card>
+                                <h3>TV Spend Distribution Table</h3>
+                                <Table :data="tvSpendTableData" />
+                            </v-card>
+                        </v-col>
+                    </v-row>
+                    <v-row justify="center">
+                        <v-col cols="10" sm="6" md="4">
                             <v-card>
                                 <h3>Print Spend Distribution Table</h3>
                                 <Table :data="printSpendTableData" />
                             </v-card>
                         </v-col>
-                        <v-col cols="12" sm="6">
+                        <v-col cols="10" sm="6" md="4">
                             <v-card>
                                 <h3>Radio Spend Distribution Table</h3>
                                 <Table :data="radioSpendTableData" />
-                            </v-card>
-                        </v-col>
-                        <v-col cols="12" sm="6">
-                            <v-card>
-                                <h3>TV Spend Distribution Table</h3>
-                                <Table :data="tvSpendTableData" />
                             </v-card>
                         </v-col>
                     </v-row>
