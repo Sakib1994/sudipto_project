@@ -90,7 +90,7 @@ export default {
   name: "App",
   data: () => ({
     token: "",
-    toggle: false
+    closeOnContentClick: true
   }),
   created() {
     this.token = localStorage.getItem("token");
