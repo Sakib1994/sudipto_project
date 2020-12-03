@@ -12,6 +12,7 @@ export default new Vuex.Store({
     accessToken: "",
     username: "",
     response_id: "",
+    error: "",
     cash_distribution: {},
     spend_distribution: {},
     print_spend_distribution: {},
@@ -45,6 +46,7 @@ export default new Vuex.Store({
     setPrintSpendDistribution: (state, payload) => (state.print_spend_distribution = payload),
     setRadioSpendDistribution: (state, payload) => (state.radio_spend_distribution = payload),
     setTvSpendDistribution: (state, payload) => (state.tv_spend_distribution = payload),
+    setError: (state, payload) => (state.error = payload),
   },
   actions: {
     setAnswers: ({ commit }, payload) => {
@@ -99,14 +101,13 @@ export default new Vuex.Store({
         router.push({ name: 'Result' });
       })
         .catch(error => {
-          console.log("Errod sb ",error);
+          console.log("Errod sb ", error);
           commit("setLoadingToogle", false);
         });
       commit("setAnswers", payload);
     },
     setAccessToken: ({ commit }, payload) => {
       commit("setLoadingToogle", true);
-      let token;
       axios
         .get("login", {
           auth: {
@@ -115,17 +116,27 @@ export default new Vuex.Store({
           },
         })
         .then((response) => {
+          console.log(response);
           if (response.status === 200) {
-            token = response.data.token;
+            const {token, username}  = response.data;
             localStorage.setItem("token", token);
             commit("setAccessToken", token);
+            commit("setUsername", username);
             commit("setLoadingToogle", false);
             router.push({ name: 'Form' });
+          }
+          else if (response.status === 401) {
+            console.log("error");
+            commit("setError", "please try with diffent Username password combination");
+            commit("setLoadingToogle", false);
           }
         })
         .catch(error => {
           console.log(error);
-          commit("setLoadingToogle", false);
+          commit("setError", "please try with diffent Username password combination");
+          setTimeout(()=>{
+            commit("setLoadingToogle", false);
+          },1000);
         });
     }
   },
