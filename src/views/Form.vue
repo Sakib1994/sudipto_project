@@ -13,6 +13,7 @@
                                             v-slot:activator="{ on, attrs }"
                                         >
                                             <v-text-field
+                                                :append-icon="'mdi-rename-box'"
                                                 v-bind="attrs"
                                                 v-on="on"
                                                 v-model="answers.client_name"
@@ -43,6 +44,9 @@
                                             v-slot:activator="{ on, attrs }"
                                         >
                                             <v-select
+                                                :append-icon="
+                                                    'mdi-clipboard-list'
+                                                "
                                                 v-bind="attrs"
                                                 v-on="on"
                                                 v-model="answers.industry"
@@ -75,6 +79,9 @@
                                             v-slot:activator="{ on, attrs }"
                                         >
                                             <v-select
+                                                :append-icon="
+                                                    'mdi-clipboard-list'
+                                                "
                                                 v-bind="attrs"
                                                 v-on="on"
                                                 v-model="answers.client_size"
@@ -110,6 +117,7 @@
                                             v-slot:activator="{ on, attrs }"
                                         >
                                             <v-text-field
+                                                :append-icon="'mdi-rename-box'"
                                                 v-bind="attrs"
                                                 v-on="on"
                                                 type="number"
@@ -143,6 +151,7 @@
                                             v-slot:activator="{ on, attrs }"
                                         >
                                             <v-text-field
+                                                :append-icon="'mdi-rename-box'"
                                                 v-bind="attrs"
                                                 v-on="on"
                                                 type="number"
@@ -176,6 +185,9 @@
                                             v-slot:activator="{ on, attrs }"
                                         >
                                             <v-select
+                                                :append-icon="
+                                                    'mdi-clipboard-list'
+                                                "
                                                 v-bind="attrs"
                                                 v-on="on"
                                                 v-model="
@@ -215,6 +227,7 @@
                                             v-slot:activator="{ on, attrs }"
                                         >
                                             <v-text-field
+                                                :append-icon="'mdi-rename-box'"
                                                 v-bind="attrs"
                                                 v-on="on"
                                                 type="number"
@@ -244,6 +257,7 @@
                                             v-slot:activator="{ on, attrs }"
                                         >
                                             <v-text-field
+                                                :append-icon="'mdi-rename-box'"
                                                 v-bind="attrs"
                                                 v-on="on"
                                                 type="number"
@@ -281,6 +295,9 @@
                                             v-slot:activator="{ on, attrs }"
                                         >
                                             <v-select
+                                                :append-icon="
+                                                    'mdi-clipboard-list'
+                                                "
                                                 v-bind="attrs"
                                                 v-on="on"
                                                 v-model="answers.consumer_type"
@@ -318,6 +335,9 @@
                                                 v-slot:activator="{ on, attrs }"
                                             >
                                                 <v-select
+                                                    :append-icon="
+                                                        'mdi-clipboard-list'
+                                                    "
                                                     v-bind="attrs"
                                                     v-on="on"
                                                     v-model="
@@ -361,6 +381,9 @@
                                                 v-slot:activator="{ on, attrs }"
                                             >
                                                 <v-select
+                                                    :append-icon="
+                                                        'mdi-clipboard-list'
+                                                    "
                                                     v-bind="attrs"
                                                     v-on="on"
                                                     v-model="
@@ -409,6 +432,9 @@
                                                 v-slot:activator="{ on, attrs }"
                                             >
                                                 <v-select
+                                                    :append-icon="
+                                                        'mdi-clipboard-list'
+                                                    "
                                                     v-bind="attrs"
                                                     v-on="on"
                                                     v-model="
@@ -452,6 +478,9 @@
                                                 v-slot:activator="{ on, attrs }"
                                             >
                                                 <v-select
+                                                    :append-icon="
+                                                        'mdi-clipboard-list'
+                                                    "
                                                     v-bind="attrs"
                                                     v-on="on"
                                                     v-model="
@@ -495,6 +524,9 @@
                                                 v-slot:activator="{ on, attrs }"
                                             >
                                                 <v-select
+                                                    :append-icon="
+                                                        'mdi-clipboard-list'
+                                                    "
                                                     v-bind="attrs"
                                                     v-on="on"
                                                     v-model="
@@ -535,11 +567,15 @@
                                 </template>
                                 <v-col cols="12">
                                     <v-btn
+                                        
                                         block
                                         @click="submitData"
                                         :disabled="!valid"
                                         :loading="loading"
                                         color="success"
+                                    >
+                                    <v-icon small left
+                                        >mdi-send</v-icon
                                     >
                                         Submit
                                     </v-btn>
