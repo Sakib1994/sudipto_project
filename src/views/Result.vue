@@ -7,13 +7,13 @@
           <v-card-title>Pie Charts</v-card-title>
           <v-card-text>
             <v-row justify="space-around">
-              <v-col cols="12" sm="6" md="4">
+              <v-col cols="12" sm="6" md="5">
                 <v-card>
                   <h3>Cash Distribution</h3>
                   <PieChart :chartdata="chartdata1" :options="options" />
                 </v-card>
               </v-col>
-              <v-col cols="12" sm="6" md="4">
+              <v-col cols="12" sm="6" md="5">
                 <v-card>
                   <h3>Spend distribution</h3>
                   <PieChart :chartdata="chartdata2" :options="options" />
