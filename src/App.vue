@@ -97,22 +97,22 @@
 
 <script>
 export default {
-    name: "App",
-    data: () => ({
-        token: "",
-        toggle: false,
-    }),
-    created() {
-        this.token = localStorage.getItem("token");
+  name: "App",
+  data: () => ({
+    token: "",
+    closeOnContentClick: true
+  }),
+  created() {
+    this.token = localStorage.getItem("token");
+  },
+  methods: {
+    handleLogout() {
+      localStorage.removeItem("token");
+      this.token = "";
+      this.$router.push({ name: "Login" });
     },
-    methods: {
-        handleLogout() {
-            localStorage.removeItem("token");
-            this.token = "";
-            this.$router.push({ name: "Login" });
-        },
-    },
-};
+  }
+}
 </script>
 <style>
 #main-container {
