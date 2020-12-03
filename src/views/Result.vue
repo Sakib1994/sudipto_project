@@ -1,8 +1,7 @@
 <template>
     <div class="result">
-        <h1>Result</h1>
         <v-container>
-            <v-card class="mb-6">
+            <v-card class="mb-6" color="deep-purple lighten-5">
                 <v-row justify="space-around">
                     <v-card-title>Media Recommendations</v-card-title>
                     <v-card-text>
@@ -29,7 +28,7 @@
                     </v-card-text>
                 </v-row>
             </v-card>
-            <v-card>
+            <v-card color="deep-purple lighten-5">
                 <v-row justify="space-around">
                     <v-card-title>
                         Spend Recommendations
