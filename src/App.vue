@@ -24,10 +24,9 @@
 
             <v-menu top :close-on-content-click="closeOnContentClick">
                 <template v-slot:activator="{ on, attrs }">
-                    <v-col cols="12" sm="1">
+                    <v-col cols="1" sm="1">
                         <v-btn right icon dark v-bind="attrs" v-on="on">
-                            <span v-if="username">{{ username }}</span>
-                            <v-icon>mdi-arrow-down-drop-circle-outline</v-icon>
+                            <v-icon>mdi-account-cog</v-icon>
                         </v-btn>
                     </v-col>
                 </template>
@@ -35,20 +34,36 @@
                 <v-list>
                     <v-list-item v-if="!token">
                         <v-list-item-title>
-                            <template>
-                                <v-btn text to="/login">
-                                    <span class="mr-2">Login</span>
-                                    <v-icon>mdi-login-variant</v-icon>
-                                </v-btn>
+                            <template >
+                                <span >
+                                    Please log in
+                                </span>
                             </template>
                         </v-list-item-title>
                     </v-list-item>
                     <v-list-item v-if="token">
                         <v-list-item-title>
                             <template>
-                                <v-btn text @click="handleLogout">
-                                    <span class="mr-2">Log Out</span>
-                                    <v-icon>mdi-logout-variant</v-icon>
+                                <span class="ma-2" v-if="username">{{
+                                    username
+                                }}</span>
+                            </template>
+                        </v-list-item-title>
+                    </v-list-item>
+                    <v-list-item v-if="token">
+                        <v-list-item-title>
+                            <template>
+                                <v-btn
+                                    color="red"
+                                    padless
+                                    small
+                                    text
+                                    @click="handleLogout"
+                                >
+                                    <v-icon small left
+                                        >mdi-logout-variant</v-icon
+                                    >
+                                    <span>log out</span>
                                 </v-btn>
                             </template>
                         </v-list-item-title>
