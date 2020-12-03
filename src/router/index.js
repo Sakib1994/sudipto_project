@@ -36,6 +36,13 @@ const routes = [
             import(/* webpackChunkName: "login" */ "../views/Login.vue"),
     },
     {
+        path: "/about",
+        name: "About",
+        meta: { title: "About - RGads" },
+        component: () =>
+            import(/* webpackChunkName: "login" */ "../views/About.vue"),
+    },
+    {
         path: "/(.*?)",
         redirect: "/",
     },

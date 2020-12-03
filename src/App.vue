@@ -84,7 +84,7 @@
                         {{ " | " }}
                         <router-link
                             style="textDecoration: none; color: #032a7f;font-size: 11px; font-weight: bold"
-                            to="/"
+                            to="/about"
                             @click.stop
                             >How it works</router-link
                         >

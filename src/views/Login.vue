@@ -94,5 +94,13 @@ export default {
             });
         },
     },
+    mounted: function() {
+        let elHtml = document.getElementsByTagName("html")[0];
+        elHtml.style.overflowY = "hidden";
+    },
+    destroyed: function() {
+        let elHtml = document.getElementsByTagName("html")[0];
+        elHtml.style.overflowY = null;
+    },
 };
 </script>
