@@ -2,6 +2,7 @@
     <v-app id="main-container">
         <v-app-bar app color="grey darken-4" dark dense>
             <div class="d-flex align-center">
+                <router-link to="/">
                 <v-img
                     alt="logo"
                     contain
@@ -9,19 +10,18 @@
                     transition="scale-transition"
                     width="70"
                 />
-                <router-link to="/">
-                    <v-img
-                        alt="logo"
-                        contain
-                        :src="require('./assets/rgadstext.png')"
-                        transition="scale-transition"
-                        width="90"
-                    />
-                </router-link>
+                 </router-link>
+           
+      
+               
             </div>
 
             <v-spacer></v-spacer>
-            <v-btn to="/" text v-if="this.$router.currentRoute.path ==='/result'">
+            <v-btn
+                to="/"
+                text
+                v-if="this.$router.currentRoute.path === '/result'"
+            >
                 submit again
             </v-btn>
             <v-menu top :close-on-content-click="closeOnContentClick">
@@ -36,8 +36,8 @@
                 <v-list>
                     <v-list-item v-if="!token">
                         <v-list-item-title>
-                            <template >
-                                <span >
+                            <template>
+                                <span>
                                     Please log in
                                 </span>
                             </template>
@@ -124,7 +124,7 @@ export default {
     data: () => ({
         token: "",
         closeOnContentClick: true,
-        username: ""
+        username: "",
     }),
     created() {
         this.token = localStorage.getItem("token");
@@ -140,11 +140,30 @@ export default {
             this.username = localStorage.getItem("username");
         }
     },
+    watch: {
+        windowHeight(newHeight, oldHeight) {
+            this.txt = `it changed to ${newHeight} from ${oldHeight}`;
+        },
+    },
+
+    mounted() {
+        this.$nextTick(() => {
+            window.addEventListener("resize", this.onResize);
+        });
+    },
+
+    beforeDestroy() {
+        window.removeEventListener("resize", this.onResize);
+    },
     methods: {
         handleLogout() {
             localStorage.removeItem("token");
             this.token = "";
             this.$router.push({ name: "Login" });
+        },
+        onResize() {
+            this.windowWidth = window.innerWidth;
+            //console.log(this.windowWidth);
         },
     },
 };

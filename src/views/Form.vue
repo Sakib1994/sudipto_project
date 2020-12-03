@@ -3,7 +3,7 @@
         <v-form v-model="valid">
             <v-container>
                 <v-row justify="center">
-                    <v-col cols="10" sm="6" md="8">
+                    <v-col cols="12" sm="8">
                         <v-card class="pa-4 ma-8" color="grey lighten-5">
                             <v-card-title>CUSTOMER PROFILE</v-card-title>
                             <v-row justify="center">
@@ -567,16 +567,13 @@
                                 </template>
                                 <v-col cols="12">
                                     <v-btn
-                                        
                                         block
                                         @click="submitData"
                                         :disabled="!valid"
                                         :loading="loading"
                                         color="success"
                                     >
-                                    <v-icon small left
-                                        >mdi-send</v-icon
-                                    >
+                                        <v-icon small left>mdi-send</v-icon>
                                         Submit
                                     </v-btn>
                                 </v-col>

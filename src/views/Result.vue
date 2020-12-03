@@ -37,13 +37,13 @@
         </v-row>
         <v-card-text>
           <v-row justify="center">
-            <v-col cols="10" sm="6" md="4">
+            <v-col cols="10" sm="6" md="5">
               <v-card>
                 <h3>Spend Distribution Table</h3>
                 <Table :data="spendTableData" />
               </v-card>
             </v-col>
-            <v-col cols="10" sm="6" md="4">
+            <v-col cols="10" sm="6" md="5">
               <v-card>
                 <h3>TV Spend Distribution Table</h3>
                 <Table :data="tvSpendTableData" />
@@ -51,13 +51,13 @@
             </v-col>
           </v-row>
           <v-row justify="center">
-            <v-col cols="10" sm="6" md="4">
+            <v-col cols="10" sm="6" md="5">
               <v-card>
                 <h3>Print Spend Distribution Table</h3>
                 <Table :data="printSpendTableData" />
               </v-card>
             </v-col>
-            <v-col cols="10" sm="6" md="4">
+            <v-col cols="10" sm="6" md="5">
               <v-card>
                 <h3>Radio Spend Distribution Table</h3>
                 <Table :data="radioSpendTableData" />
