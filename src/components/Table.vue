@@ -4,17 +4,17 @@
             <thead>
                 <tr>
                     <th class="text-left">
-                        Name
+                        Product
                     </th>
                     <th class="text-left">
-                        Cost
+                        Investment
                     </th>
                 </tr>
             </thead>
             <tbody>
                 <tr v-for="item in data" :key="item.name">
                     <td>{{ item.name }}</td>
-                    <td>{{ item.cost }}</td>
+                    <td>{{ item.cost.toLocaleString() }}</td>
                 </tr>
             </tbody>
         </template>
@@ -22,7 +22,6 @@
 </template>
 
 <script>
-
 export default {
     props: {
         data: {

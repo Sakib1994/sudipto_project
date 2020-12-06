@@ -1,6 +1,6 @@
 <script>
 import { Doughnut } from 'vue-chartjs'
-import 'chartjs-plugin-labels';
+import ChartDataLabels from 'chartjs-plugin-datalabels'; // change here, I am just experimenting
 
 export default {
   extends: Doughnut,
